@@ -1,15 +1,17 @@
 <template>
   <form @submit.prevent="submitHandler" class="todo-form">
-    <input
-      type="text"
-      ref="todoInput"
-      v-model="TodoTitle"
-      required
-      class="todo-input"
-    />
+    <div class="todo-input-container">
+      <input
+        type="text"
+        ref="todoInput"
+        v-model="TodoTitle"
+        required
+        class="todo-input"
+      />
 
-    <Edit v-if="isEditing" @edit="changeTitle" />
-    <Plus v-else @create="createTodo" type="submit" />
+      <Edit v-if="isEditing" @edit="changeTitle" />
+      <Plus v-else @create="createTodo" type="submit" />
+    </div>
   </form>
 
   <div v-for="todo in TodoList" :key="todo.id" class="todo-list">
@@ -103,11 +105,26 @@ onMounted(async () => {
   gap: 10px;
 }
 
+.todo-input-container {
+  background-color: black;
+  border: 3px solid white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  padding-right: 10px;
+  box-shadow: 0 0 10px white;
+}
 .todo-input {
   font-size: 1.3rem;
-  border-radius: 12px;
-  padding: 5px;
+  padding: 10px;
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
 }
+
 .todo-list {
   display: flex;
   flex-direction: column;
