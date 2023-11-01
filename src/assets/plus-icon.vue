@@ -1,5 +1,5 @@
 <template>
-  <svg @click="emit('create')" width="35" height="35" viewBox="0 0 48 48">
+  <svg @click="emit('create')" width="29" height="29" viewBox="0 0 48 48">
     <path
       fill="#4caf50"
       d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"
