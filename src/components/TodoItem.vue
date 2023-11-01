@@ -1,6 +1,6 @@
 <template>
   <div :class="[todo.completed ? 'completed' : '', 'todo']">
-    <span>{{ todo.title }}</span>
+    <span @dblclick="emit('edit')">{{ todo.title }}</span>
     <div class="icons">
       <Edit class="svg-icon" @edit="emit('edit')" />
       <Delete class="svg-icon" @delete="emit('delete')" />
